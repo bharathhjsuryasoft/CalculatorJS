@@ -15,78 +15,43 @@ function getSecondDisplay(){
 }
 
 function printSecondDisplay(num){
-    if(num == ""){
-        document.getElementById("output-value").innerText = num;
-    }else{
-        document.getElementById("output-value").innerText= getFormattedNumber(num);
-    }
+    document.getElementById("output-value").innerText = num;
+
 }
 
-function getFormattedNumber(num){
-    if(num=="-"){
-        return "";
-    }
-    var n = Number(num);
-    var value = n.toLocaleString("en"); 
-    return value;
-}
+var equation = document.getElementsByClassName("input");
 
-function removeNumberFormat(num){
-    return Number(num.replace(/,/g,''));
-}
+for(var i = 0; i< equation.length; i++){
 
-var operator = document.getElementsByClassName("operator");
+    equation[i].addEventListener('click',function(){
+        var expression = getFirstDisplay();
+        
+        console.log(expression.length);
 
-for(var i = 0; i< operator.length; i++){
-    operator[i].addEventListener('click',function(){
         if(this.id=="clear"){
             printFirstDisplay("");
             printSecondDisplay("");
         }else if(this.id=="backspace"){
-            var output = removeNumberFormat(getSecondDisplay()).toString();
+            var output = getFirstDisplay().toString();
             if(output){
-                output = output.substring(0,output.length-1);
-                printSecondDisplay(output);
-            }
+            output = output.substring(0,output.length-1);
+                printFirstDisplay(output);
+            }   
+        }else if(this.id =="equals"){
+            var result = eval(expression);
+            printSecondDisplay(result);
+            printFirstDisplay("");
+        }else if(expression.length < 7){
+            expression=expression+this.id;
+            printFirstDisplay(expression);
         }else{
-            if(output!=""){
-                var output = getSecondDisplay();
-                var equation = getFirstDisplay();
-                if(output==""&&equation!=""){
-                    if(isNaN(equation[equation.length-1])){
-                        equation= equation.substring(0,equation.length-1);
-                    }
-                }
-                if(output!="" || equation!=""){
-                    
-                    output = output == "" ? output : removeNumberFormat(output);
-                    equation = equation+output;
-                    if(this.id=="="){
-                        var result = eval(equation);
-                        printSecondDisplay(result);
-                        printFirstDisplay("");
-                    }else{
-                        equation=equation+this.id;
-                        printFirstDisplay(equation);
-                        printSecondDisplay("");
-                    }
-                }
-            }
-        }
-
-    });
-}
-
-var number = document.getElementsByClassName("number");
-for(var i = 0; i< number.length; i++){
-    number[i].addEventListener('click',function(){
-        var output = removeNumberFormat(getSecondDisplay());
-        if(output!=NaN && output < 999999){ //check if output is a number and it does'nt exceed screen limit
-            output=output+this.id;
-            printSecondDisplay(output);
+            printFirstDisplay("Error")
+            printSecondDisplay("");
         }
     })
+    
 }
 
 
- 
+
+
