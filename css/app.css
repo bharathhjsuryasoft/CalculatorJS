@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+
+body {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: 0.1em;
+
+  color: #000000;
+  background: #ffe4c2;
+  text-align: center;
+}
+
+/* default theme is set to white theme */
+
+:root {
+  --primary-color: #ffffff;
+  --presult-color: #e1efff;
+  --phistory-color: #272727;
+  --poutput-color: #747474;
+  --pclear-color: #00dec3;
+  --pnumber-color: #e1efff;
+  --ptext-color: #000000;
+  --poperator-color: #89c0ff;
+
+  --secondary-color: #0d0d0d;
+  --sresult-color: #1c1c1c;
+  --shistory-color: #d8d8d8;
+  --soutput-color: #747474;
+  --sclear-color: #00c4ac;
+  --snumber-color: #1c1c1c;
+  --stext-color: #ffffff;
+  --soperator-color: #89c0ff;
+}
+
+.dark-theme {
+  --primary-color: #0d0d0d;
+  --secondary-color: #ffffff;
+
+  --presult-color: #1c1c1c;
+  --sresult-color: #e1efff;
+
+  --phistory-color: #d8d8d8;
+  --poutput-color: #747474;
+
+  --shistory-color: #272727;
+  --soutput-color: #747474;
+
+  --sclear-color: #00dec3;
+  --pclear-color: #00c4ac;
+
+  --pnumber-color: #1c1c1c;
+  --snumber-color: #e1efff;
+
+  --ptext-color: #ffffff;
+  --stext-color: #000000;
+}
+
+/* ========================== */
+/*         Toggle Icon        */
+/* ========================== */
+
+#icon {
+  float: right;
+  margin-right: 50px;
+  padding-top: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* ========================== */
+/*          Container         */
+/* ========================== */
+
+#container {
+  width: 428px;
+  height: 926px;
+  background: var(--primary-color);
+  margin: 0 auto;
+  border-radius: 50px;
+  position: relative;
+  top: 20px;
+}
+
+#result {
+  width: 428px;
+  height: 332px;
+  background: var(--presult-color);
+  border-radius: 50px 50px 50px 50px;
+}
+
+#equation {
+  text-align: right;
+  height: 94px;
+  margin: 0 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.1em;
+
+  color: var(--phistory-color);
+}
+
+#output {
+  text-align: right;
+  height: 70px;
+  margin: 10px 20px;
+
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 70px;
+  letter-spacing: 0.1em;
+
+  color: var(--poutput-color);
+}
+
+#keyboard {
+  height: 594px;
+  padding-top: 50px;
+  padding-left: 12px;
+}
+
+.operator,
+.number {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  float: left;
+  border-radius: 30px;
+  border-width: 0;
+  border-style: none;
+  font-weight: bold;
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+#clear {
+  width: 180px;
+  height: 80px;
+
+  background: var(--pclear-color);
+  border-radius: 30px;
+  border-style: none;
+
+  font-weight: 150;
+  font-size: 25px;
+  color: var(--ptext-color);
+}
+
+.operator:active,
+.number:active {
+  font-size: 15px;
+}
+
+.operator:focus,
+.number:focus {
+  outline: 0;
+}
+
+.number {
+  background: var(--pnumber-color);
+  color: var(--ptext-color);
+  border-radius: 50%;
+}
+
+.operator {
+  background: var(--poperator-color);
+  border-radius: 30px;
+  border-style: none;
+  font-weight: bold;
+  font-size: 25px;
+  color: var(--ptext-color);
+}
+
+.ce {
+  background: var(--pnumber-color);
+  color: var(--ptext-color);
+  border-radius: 50%;
+}
+
+.dot {
+  background: var(--pnumber-color);
+  color: var(--ptext-color);
+  border-radius: 50%;
+}
