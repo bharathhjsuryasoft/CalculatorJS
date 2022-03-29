@@ -1,55 +1,50 @@
-/* There are 2 display in Calculator Applications
-    => First Display displays the operations or equation part,
-    => Second Display displays the output part of the Calculator
-*/
-function getFirstDisplay(){
-    return document.getElementById("operations-value").innerText;
-}
+let output = document.getElementById("outputContainer")
 
-function printFirstDisplay(num){
-    document.getElementById("operations-value").innerText=num;
-}
+let input = document.getElementById("input")
 
-function getSecondDisplay(){
-    return document.getElementById("output-value").innerText;
-}
+function display(num){
 
-function printSecondDisplay(num){
-    document.getElementById("output-value").innerText = num;
-
-}
-
-var equation = document.getElementsByClassName("input");
-
-for(var i = 0; i< equation.length; i++){
-
-    equation[i].addEventListener('click',function(){
-        var expression = getFirstDisplay();
-        
-        console.log(expression.length);
-
-        if(this.id=="clear"){
-            printFirstDisplay("");
-            printSecondDisplay("");
-        }else if(this.id=="backspace"){
-            var output = getFirstDisplay().toString();
-            if(output){
-            output = output.substring(0,output.length-1);
-                printFirstDisplay(output);
-            }   
-        }else if(this.id =="equals"){
-            var result = eval(expression);
-            printSecondDisplay(result);
-            printFirstDisplay("");
-        }else if(expression.length < 7){
-            expression=expression+this.id;
-            printFirstDisplay(expression);
-        }else{
-            printFirstDisplay("Error")
-            printSecondDisplay("");
-        }
-    })
+    if(input.value.length > 6){
+        document.getElementById("input").style.fontSize = "48px";
+    }
     
+    if(input.value.length > 12){
+        document.getElementById("input").style.fontSize = "28px";
+    }
+    
+    if(input.value.length > 20){
+        input.value = "";
+    }
+
+    input.value += num;
+    console.log(input.value.length); 
+    
+}
+
+function clear(){
+    input.value = "";
+    document.getElementById("outputContainer").innerText = "";
+}
+
+function del(){
+    input.value = input.value.slice(0, -1);
+}
+
+function calculate(){
+    try{
+        let outputValue = eval(input.value);
+        
+        if(outputValue>999999999999){
+            document.getElementById("outputContainer").style.fontSize = "30px";
+        }
+
+        document.getElementById("outputContainer").innerText = outputValue;
+
+    }catch(err){
+        input.value = "";
+        document.getElementById("outputContainer").innerText = "";
+        alert("Invalid") 
+    }
 }
 
 
