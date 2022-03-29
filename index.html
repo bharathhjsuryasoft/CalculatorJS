@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -10,48 +11,47 @@
 
     <link rel="stylesheet" href="./css/app.css">
 </head>
-<body>
 
-    
+<body>    
     <div><img id="icon" src=""></div>
 
-    <div id="container">
-        <div id="result">
-            <div id="equation">
-                <p id="operations-value"></p>
+    <div class="container">
+        <div class="calculator light_theme">
+
+            <div class="inputContainer">
+                <input type="text" placeholder="" id="input">
+                <div id="outputContainer"></div>
             </div>
-            <div id="output">
-                <p id="output-value"></p>
+
+            <div class="keyboard">
+                <button id="clear" class="clear" onclick="clear()" >AC</button>
+                <button class="operator" onclick="display('%')"><img id="modulus" src="./css/img/Vectors/mod_dark.svg"></button>
+                <button class="operator" onclick="display('/')"><img id="division" src="./css/img/Vectors/div_dark.svg"></button>
+                <button onclick="display('7')">7</button>
+                <button onclick="display('8')">8</button>
+                <button onclick="display('9')">9</button>
+                <button class="operator" onclick="display('*')"><img id="multiplication" src="./css/img/Vectors/mul_dark.svg"></button>
+                <button onclick="display('4')">4</button>
+                <button onclick="display('5')">5</button>
+                <button onclick="display('6')">6</button>
+                <button class="operator" onclick="display('-')"><img id="subtraction" src="./css/img/Vectors/sub_dark.svg"></button>
+                <button onclick="display('1')">1</button>
+                <button onclick="display('2')">2</button>
+                <button onclick="display('3')">3</button>
+                <button class="operator" onclick="display('+')"><img id="addition" src="./css/img/Vectors/add_dark.svg"></button>
+                <button onclick="display('0')">0</button>
+                <button onclick="display('.')"><img id="dot" src="./css/img/Vectors/dot_dark.svg"></button>
+                <button onclick="del()"><img id="del" src="./css/img/Vectors/ce_dark.svg"></button>
+                <button class="operator" onclick="calculate()"><img id="equals" src="./css/img/Vectors/equals_dark.svg"></button>
             </div>
-        </div>
-        <div id="keyboard">
-            
-            <button class="input operator" id="clear">AC</button>
-            <button class="input operator" id="%"><img src="./css/img/Vectors/mod_dark.svg"></button>
-            <button class="input operator" id="/"><img src="./css/img/Vectors/div_dark.svg"></button>
-            <button class="input number" id="7">7</button>
-            <button class="input number" id="8">8</button>
-            <button class="input number" id="9">9</button>
-            <button class="input operator" id="*"><img src="./css/img/Vectors/mul_dark.svg"></button>
-            <button class="input number" id="4">4</button>
-            <button class="input number" id="5">5</button>
-            <button class="input number" id="6">6</button>
-            <button class="input operator" id="-"><img src="./css/img/Vectors/sub_dark.svg"></button>
-            <button class="input number" id="1">1</button>
-            <button class="input number" id="2">2</button>
-            <button class="input number" id="3">3</button>
-            <button class="input operator" id="+"><img src="./css/img/Vectors/add_dark.svg"></button>
-            <button class="input number" id="0">0</button>
-            <button class="input operator dot" id="."><img src="./css/img/Vectors/dot_dark.svg"></button>
-            <button class="input operator ce" id="backspace"><img src="./css/img/Vectors/ce_dark.svg"></button>
-            <button class="input operator" id="equals"><img src="./css/img/Vectors/equals_dark.svg"></button>
+
         </div>
     </div>
-
-
 
     <script src="./js/app.js" ></script>
     <script src="./js/theme.js" ></script>
     <script src="./js/restrictScreenSize.js" ></script>
+
 </body>
+
 </html>
