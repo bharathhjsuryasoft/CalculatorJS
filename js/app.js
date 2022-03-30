@@ -47,6 +47,7 @@ function calculate(){
         
         let outputValue = eval(input.value);
 
+        // Math Property is added to get 12 digits number
         if(outputValue> Math.floor(100000 + Math.random() * 9000000000)){
             output.style.fontSize = "30px";
         }
