@@ -170,4 +170,8 @@ button img {
 
 .operator img {
   background-color: #89c0ff;
+  margin-top: 10px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
 }
