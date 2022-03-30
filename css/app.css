@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+body {
+  min-width: 1000px;
+  min-height: 1000px;
+}
 
 * {
   margin: 0;
@@ -24,48 +28,22 @@
 
 :root {
   --primary-color: #ffffff;
-  --secondary-color: #0d0d0d;
-
-  --presult-color: #e1efff;
-  --sresult-color: #1c1c1c;
-
-  --phistory-color: #272727;
-  --shistory-color: #d8d8d8;
-
-  --poutput-color: #747474;
-  --soutput-color: #747474;
-
-  --pclear-color: #00dec3;
-  --sclear-color: #00c4ac;
-
-  --pnumber-color: #e1efff;
-  --snumber-color: #1c1c1c;
-
-  --ptext-color: #000000;
-  --stext-color: #ffffff;
+  --result-color: #e1efff;
+  --input-color: #272727;
+  --output-color: #747474;
+  --clear-color: #00dec3;
+  --number-color: #e1efff;
+  --text-color: #000000;
 }
 
 .dark-theme {
   --primary-color: #0d0d0d;
-  --secondary-color: #ffffff;
-
-  --presult-color: #1c1c1c;
-  --sresult-color: #e1efff;
-
-  --poutput-color: #747474;
-  --soutput-color: #747474;
-
-  --phistory-color: #d8d8d8;
-  --shistory-color: #272727;
-
-  --pclear-color: #00c4ac;
-  --sclear-color: #00dec3;
-
-  --pnumber-color: #1c1c1c;
-  --snumber-color: #e1efff;
-
-  --ptext-color: #ffffff;
-  --stext-color: #000000;
+  --result-color: #1c1c1c;
+  --input-color: #d8d8d8;
+  --output-color: #747474;
+  --clear-color: #00c4ac;
+  --number-color: #1c1c1c;
+  --text-color: #ffffff;
 }
 
 /* ========================== */
@@ -92,7 +70,7 @@
   grid-column: span 4;
   width: 428px;
   height: 332px;
-  background-color: var(--presult-color);
+  background-color: var(--result-color);
   border-radius: 50px 50px 50px 50px;
   border: none;
 }
@@ -101,8 +79,8 @@ input {
   grid-column: span 4;
   width: 428px;
   height: 94px;
-  background-color: var(--presult-color);
-  color: var(--phistory-color);
+  background-color: var(--result-color);
+  color: var(--input-color);
   font-size: 88px;
   text-align: end;
   margin: auto;
@@ -118,8 +96,8 @@ input {
   font-style: normal;
   font-weight: 600;
   font-size: 60px;
-  background-color: var(--presult-color);
-  color: var(--poutput-color);
+  background-color: var(--result-color);
+  color: var(--output-color);
   margin-right: 20px;
 }
 
@@ -142,25 +120,25 @@ button {
   font-weight: bold;
   font-size: 25px;
   border-radius: 50%;
-  background-color: var(--pnumber-color);
-  color: var(--ptext-color);
+  background-color: var(--number-color);
+  color: var(--text-color);
 }
 
 button img {
-  background-color: var(--pnumber-color);
+  background-color: var(--number-color);
 }
 
 .clear {
   width: 180px;
   height: 80px;
 
-  background: var(--pclear-color);
+  background: var(--clear-color);
   border-radius: 30px;
   border-style: none;
 
   font-weight: 150;
   font-size: 25px;
-  color: var(--ptext-color);
+  color: var(--text-color);
 }
 
 .operator {

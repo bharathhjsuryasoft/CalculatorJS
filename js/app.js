@@ -30,39 +30,35 @@ function Clear(){
     output.innerText = "";
 }
 
-// Delete function called in <x| button which deletes the last enterd character on the screen
+// Delete function called in <x| button which deletes the last entered character on the screen
+// delete is a reserve word hence del is used as a function name
 function del(){
     input.value = input.value.slice(0, -1);
 }
 
 // Calculation Function 
+/* 
+    function evaluates return the answer that is stored in outputValue which 
+    is of type number and if any error occurs in the process it is caught in the catch block as Invalid
+*/
+
 function calculate(){
     try{
-
-        /* 
-           eval function Converts a string to an integer evaluates it 
-           and provides the answer that is stored in outputValue which 
-           is of type number and if any error occurs in this eval it 
-           is caught in the catch block as Invalid
-        */
+        
         let outputValue = eval(input.value);
 
-        if(outputValue>999999999999){
+        if(outputValue> Math.floor(100000 + Math.random() * 9000000000)){
             output.style.fontSize = "30px";
         }
 
         if(outputValue === Infinity){
             output.style.fontSize = "50px";
         }
-
-        if(outputValue === Infinity){
-            output.style.fontSize = "50px";
-            output.innerText = "Error";
-        }
         
-        if(outputValue !== NaN){
-            console.log(outputValue);
-            console.log(typeof(outputValue));
+        /* TODO
+          - Here NaN comparision is not working So it should be fixed
+        */ 
+        if(outputValue != NaN){
             output.innerText = outputValue;  
         }
 
@@ -72,7 +68,3 @@ function calculate(){
         alert("Invalid") 
     }
 }
-
-
-
-
